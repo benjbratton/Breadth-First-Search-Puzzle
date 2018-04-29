@@ -44,4 +44,9 @@ public class Solution {
 		if (m % 3 == 0) return -1;
 		else return m + 1;
 	}//end rightNeighbor
+	public static void swap(int[] num, int m, int r) {
+		int temp = num[m];
+		num[m] = num[r];
+		num[r] = temp;
+	}
 }
