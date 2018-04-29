@@ -14,6 +14,16 @@ public class Solution {
 	/*			Please refer the instruction document for this function in details								     	*/
 	public static void breadthFirstSearch(int[] num, int m, Vector solution)
 	{
+		Queue<Integer> q = new LinkedList<Integer>();
+		q.add(m);
+		if(topNeighbor(m) != -1)
+			swap(num, m, m+3);
+		if(bottomNeighbor(m) != -1)
+			swap(num, m, m-3);
+		if(leftNeighbor(m) != -1)
+			swap(num, m, m+1);
+		if(rightNeighbor(m) != -1)
+			swap(num, m, m-1);
 		
 	}
 	
