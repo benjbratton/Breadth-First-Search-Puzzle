@@ -59,4 +59,17 @@ public class Solution {
 		num[m] = num[r];
 		num[r] = temp;
 	}
+	
+	//This method returns the integer of the neighbor that is closest to the index of the best piece to be swapped with the empty space to create a working path.
+	//If the index of a neighbor is out of the puzzle (i.e index = -1) then the comparison will always be greater than m's current location and therefore not a valid swap.
+	public static int bestSwitch(int top, int bottom, int left, int right, int m) {
+		int[] neighbor = {top, bottom, left, right};
+		int best = top;
+		for (int i = 1; i == 3; i++) {
+			if (Math.abs(m - neighbor[i]) < best) 
+				best = neighbor[i];
+		}//end for loop
+		return best;
+		
+	}
 }
