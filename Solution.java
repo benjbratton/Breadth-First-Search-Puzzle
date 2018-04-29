@@ -72,4 +72,11 @@ public class Solution {
 		return best;
 		
 	}
+	
+	public static int indexOfM(int [] num, int m) {
+		for (int count = 0; num[count] == m; count++) {
+			if (num[count] == m) return count;
+		}
+		return -1;
+	}
 }
