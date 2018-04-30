@@ -1,25 +1,34 @@
 package application;
 import java.util.HashMap;
 import java.util.Vector;
-
-
-
 	
-public class Solution {
-	
+public class Solution {	
 
 	/******************************************   Implementation Here  ***************************************/
-
 	/*			Implementation here: you need to implement the Breadth First Search Method				 				*/
-	/*			Please refer the instruction document for this function in details								     	*/
-	public static void breadthFirstSearch(int[] num, int m, Vector solution)
-	{
+	/*			Please refer the instruction document for this function in details
+	*/
+	public static void breadthFirstSearch(int[] num, int m, Vector solution){
+		// Initialize queue called "q"
 		Queue<Integer> q = new LinkedList<Integer>();
+
+       		// Initialize vector called "solution"
+        	Vector<Integer> solution = new Vector<>();
+
+        	// Add all the values from the queue into the vector "solution"
+        	while (!q.isEmpty()) {
+            	solution.add(q.pop());   
+		}
+    	}//end breadthFirstSearch
+}//end class Solution
+
+public class methods(){ //this section being its own class may need to be reconsidered
 		if(topNeighbor(m) != -1) {
 			int a = swap(num, m, m+3);
 			q.add(a);
 			System.out.println("a = " + a + "\t m = " + m);
 		}
+	
 		if(bottomNeighbor(m) != -1) {
 			int b = swap(num, m, m-3);
 			q.add(b);
@@ -38,9 +47,7 @@ public class Solution {
 			System.out.println("d = " + d);
 		}
 			
-		
-	}
-	//This method takes the current index of the empty space in the puzzle (m) and returns the index of the puzzle piece on top of it.
+		//This method takes the current index of the empty space in the puzzle (m) and returns the index of the puzzle piece on top of it.
 		//If the empty puzzle piece is on the top edge the method will return a -1
 		public static int topNeighbor(int m) {
 			if (m == 0 || m == 1 || m == 2) return -1;
@@ -67,12 +74,13 @@ public class Solution {
 			if (m == 2 || m == 5 || m == 8) return -1;
 			else return m + 1;
 		}//end rightNeighbor
+	
 		public static int swap(int[] num, int m, int r) {
 			int temp = num[m];
 			num[m] = num[r];
 			num[r] = temp;
 			return num[m];
-		}
+		}//end swap
 	
 	//This method returns the integer of the neighbor that is closest to the index of the best piece to be swapped with the empty space to create a working path.
 	//If the index of a neighbor is out of the puzzle (i.e index = -1) then the comparison will always be greater than m's current location and therefore not a valid swap.
@@ -85,12 +93,12 @@ public class Solution {
 		}//end for loop
 		return best;
 		
-	}
+	}//end bestSwitch
 	
 	public static int indexOfM(int [] num, int m) {
 		for (int count = 0; num[count] == m; count++) {
 			if (num[count] == m) return count;
 		}
 		return -1;
-	}
-}
+	}//end IndexOfM
+}//end methods class
