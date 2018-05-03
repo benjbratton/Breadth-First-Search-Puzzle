@@ -14,11 +14,15 @@ public class Solution {
 
        		// Initialize vector called "solution"
         	Vector<Integer> solution = new Vector<>();
-
+		
+		//sill needs th breadth first search
+		
         	// Add all the values from the queue into the vector "solution"
-        	while (!q.isEmpty()) {
-            	solution.add(q.pop());   
-		}
+		while (!q.isEmpty()) {
+            		solution.add(q.poll());
+        	}
+		
+		
     	}//end breadthFirstSearch
 }//end class Solution
 
