@@ -13,7 +13,19 @@ public class Solution {
 		Queue<Integer> q = new LinkedList<Integer>();
 		PuzzleGrid newPuzzle = new PuzzleGrid(num, m);
 		q.add(m);
-		
+		System.out.println(newPuzzle.topNeighbor());
+		while(!q.isEmpty()) {
+			int a = q.remove();
+			for(int b : newPuzzle.grid) {
+				if(!marked[b]) {
+					q.add(b);
+					marked[b] = true;
+					edgeTo[b] = a;
+					distTo[b] = distTo[a]+1;
+					solution.add(a);
+				}
+			}	
+		}
        		// Initialize vector called "solution"
         	Vector<Integer> solution = new Vector<>();
 		
