@@ -11,7 +11,9 @@ public class Solution {
 	public static void breadthFirstSearch(int[] num, int m, Vector solution){
 		// Initialize queue called "q"
 		Queue<Integer> q = new LinkedList<Integer>();
-
+		PuzzleGrid newPuzzle = new PuzzleGrid(num, m);
+		q.add(m);
+		
        		// Initialize vector called "solution"
         	Vector<Integer> solution = new Vector<>();
 		
