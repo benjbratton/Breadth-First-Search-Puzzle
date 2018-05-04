@@ -5,6 +5,9 @@ import java.util.Vector;
 public class Solution {	
 
 	/******************************************   Implementation Here  ***************************************/
+	private static boolean[] marked;
+	private static int[] edgeTo;
+	private static int[] distTo;
 	/*			Implementation here: you need to implement the Breadth First Search Method				 				*/
 	/*			Please refer the instruction document for this function in details
 	*/
