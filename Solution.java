@@ -21,7 +21,15 @@ public class Solution {
 			int a = q.remove();
 			for(int b : newPuzzle.grid) {
 				if(!visited[b]) {
-					q.add(b);
+					if(newPuzzle.topNeighbor() != null)
+						q.add(b);
+					if(newPuzzle.bottomNeighbor() != null)
+						q.add(b);
+					if(newPuzzle.leftNeighbor() != null)
+						q.add(b);
+					if(newPuzzle.rightNeighbor() != null)
+						q.add(b);
+					//q.add(b);
 					visited[b] = true;
 					edgeTo[b] = a;
 					distTo[b] = distTo[a]+1;
