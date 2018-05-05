@@ -5,24 +5,24 @@ import java.util.Vector;
 public class Solution {	
 
 	/******************************************   Implementation Here  ***************************************/
-	private static boolean[] marked;
-	private static int[] edgeTo;
-	private static int[] distTo;
+	public static boolean[] visited= new boolean[9];
+	private static int[] edgeTo = new int[9];
+	private static int[] distTo = new int[9];
 	/*			Implementation here: you need to implement the Breadth First Search Method				 				*/
-	/*			Please refer the instruction document for this function in details
-	*/
-	public static void breadthFirstSearch(int[] num, int m, Vector solution){
-		// Initialize queue called "q"
+	/*			Please refer the instruction document for this function in details								     	*/
+	public static void breadthFirstSearch(int[] num, int m, Vector solution)
+	{
 		Queue<Integer> q = new LinkedList<Integer>();
 		PuzzleGrid newPuzzle = new PuzzleGrid(num, m);
 		q.add(m);
-		System.out.println(newPuzzle.topNeighbor());
+		visited[m] = true;
+		distTo[m] = 0;
 		while(!q.isEmpty()) {
 			int a = q.remove();
 			for(int b : newPuzzle.grid) {
-				if(!marked[b]) {
+				if(!visited[b]) {
 					q.add(b);
-					marked[b] = true;
+					visited[b] = true;
 					edgeTo[b] = a;
 					distTo[b] = distTo[a]+1;
 					solution.add(a);
