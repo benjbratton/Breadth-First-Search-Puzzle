@@ -37,8 +37,6 @@ public class Solution {
 				}
 			}	
 		}
-       		// Initialize vector called "solution"
-        	Vector<Integer> solution = new Vector<>();
 		
 		//sill needs th breadth first search
 		
