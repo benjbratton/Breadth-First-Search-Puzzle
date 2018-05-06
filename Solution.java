@@ -38,14 +38,10 @@ public class Solution {
 			}	
 		}
 		
-		//sill needs th breadth first search
-		
         	// Add all the values from the queue into the vector "solution"
 		while (!q.isEmpty()) {
             		solution.add(q.poll());
-        	}
-		
-		
+        	}	
     	} //end breadthFirstSearch
 
 
