@@ -74,4 +74,4 @@ public class Solution {
 		}
 		return -1;
 	}//end IndexOfM
-}//end methods class
+}//end methods class 
